@@ -1,13 +1,13 @@
-@prefix : <http://www.semanticweb.org/davedubin/ontologies/2017/11/untitled-ontology-196#> .
+@prefix : <http://purl.org/lis590od/Example#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix orgRel: <http://purl.org/lis590od/Fall17/OrgRel#> .
-@base <http://www.semanticweb.org/davedubin/ontologies/2017/11/untitled-ontology-196> .
+@base <http://purl.org/lis590od/Example> .
 
-<http://www.semanticweb.org/davedubin/ontologies/2017/11/untitled-ontology-196> rdf:type owl:Ontology .
+<http://purl.org/lis590od/Example> rdf:type owl:Ontology .
 
 #################################################################
 #    Object Properties
@@ -17,76 +17,76 @@
 <http://purl.org/NET/c4dm/event.owl#time> rdf:type owl:ObjectProperty .
 
 
-###  http://purl.org/lis590od/Fall17/OrgRel#agency
-orgRel:agency rdf:type owl:ObjectProperty .
+###  http://purl.org/lis590od/ExampleFall17/OrgRel#agency
+<http://purl.org/lis590od/ExampleFall17/OrgRel#agency> rdf:type owl:ObjectProperty .
 
 
-###  http://purl.org/lis590od/Fall17/OrgRel#agencyRole
-orgRel:agencyRole rdf:type owl:ObjectProperty .
+###  http://purl.org/lis590od/ExampleFall17/OrgRel#agencyRole
+<http://purl.org/lis590od/ExampleFall17/OrgRel#agencyRole> rdf:type owl:ObjectProperty .
 
 
-###  http://purl.org/lis590od/Fall17/OrgRel#client
-orgRel:client rdf:type owl:ObjectProperty .
+###  http://purl.org/lis590od/ExampleFall17/OrgRel#client
+<http://purl.org/lis590od/ExampleFall17/OrgRel#client> rdf:type owl:ObjectProperty .
 
 
-###  http://purl.org/lis590od/Fall17/OrgRel#clientRole
-orgRel:clientRole rdf:type owl:ObjectProperty .
+###  http://purl.org/lis590od/ExampleFall17/OrgRel#clientRole
+<http://purl.org/lis590od/ExampleFall17/OrgRel#clientRole> rdf:type owl:ObjectProperty .
 
 
 ###  http://www.semanticweb.org/davedubin/ontologies/2017/11/untitled-ontology-196#arrested
-:arrested rdf:type owl:ObjectProperty ;
-          rdfs:domain <http://xmlns.com/foaf/0.1/Organization> ;
-          rdfs:range :Person .
+<http://www.semanticweb.org/davedubin/ontologies/2017/11/untitled-ontology-196#arrested> rdf:type owl:ObjectProperty ;
+                                                                                         rdfs:domain <http://xmlns.com/foaf/0.1/Organization> ;
+                                                                                         rdfs:range <http://www.semanticweb.org/davedubin/ontologies/2017/11/untitled-ontology-196#Person> .
 
 
 ###  http://www.semanticweb.org/davedubin/ontologies/2017/11/untitled-ontology-196#arrestee
-:arrestee rdf:type owl:ObjectProperty ;
-          rdfs:subPropertyOf orgRel:client .
+<http://www.semanticweb.org/davedubin/ontologies/2017/11/untitled-ontology-196#arrestee> rdf:type owl:ObjectProperty ;
+                                                                                         rdfs:subPropertyOf <http://purl.org/lis590od/ExampleFall17/OrgRel#client> .
 
 
 ###  http://www.semanticweb.org/davedubin/ontologies/2017/11/untitled-ontology-196#arresting_authority
-:arresting_authority rdf:type owl:ObjectProperty ;
-                     rdfs:subPropertyOf orgRel:agency .
+<http://www.semanticweb.org/davedubin/ontologies/2017/11/untitled-ontology-196#arresting_authority> rdf:type owl:ObjectProperty ;
+                                                                                                    rdfs:subPropertyOf <http://purl.org/lis590od/ExampleFall17/OrgRel#agency> .
 
 
 ###  http://www.semanticweb.org/davedubin/ontologies/2017/11/untitled-ontology-196#time_of_arrest
-:time_of_arrest rdf:type owl:ObjectProperty ;
-                rdfs:subPropertyOf <http://purl.org/NET/c4dm/event.owl#time> .
+<http://www.semanticweb.org/davedubin/ontologies/2017/11/untitled-ontology-196#time_of_arrest> rdf:type owl:ObjectProperty ;
+                                                                                               rdfs:subPropertyOf <http://purl.org/NET/c4dm/event.owl#time> .
 
 
 #################################################################
 #    Classes
 #################################################################
 
-###  http://purl.org/lis590od/Fall17/OrgRel#OrganizationRelationship
-orgRel:OrganizationRelationship rdf:type owl:Class .
+###  http://purl.org/lis590od/ExampleFall17/OrgRel#OrganizationRelationship
+<http://purl.org/lis590od/ExampleFall17/OrgRel#OrganizationRelationship> rdf:type owl:Class .
 
 
 ###  http://www.semanticweb.org/davedubin/ontologies/2017/11/untitled-ontology-196#Arrest
-:Arrest rdf:type owl:Class ;
-        rdfs:subClassOf orgRel:OrganizationRelationship ,
-                        [ rdf:type owl:Restriction ;
-                          owl:onProperty orgRel:agencyRole ;
-                          owl:hasValue orgRel:custodian
-                        ] ,
-                        [ rdf:type owl:Restriction ;
-                          owl:onProperty orgRel:clientRole ;
-                          owl:hasValue orgRel:detainee
-                        ] .
+<http://www.semanticweb.org/davedubin/ontologies/2017/11/untitled-ontology-196#Arrest> rdf:type owl:Class ;
+                                                                                       rdfs:subClassOf <http://purl.org/lis590od/ExampleFall17/OrgRel#OrganizationRelationship> ,
+                                                                                                       [ rdf:type owl:Restriction ;
+                                                                                                         owl:onProperty <http://purl.org/lis590od/ExampleFall17/OrgRel#agencyRole> ;
+                                                                                                         owl:hasValue <http://purl.org/lis590od/ExampleFall17/OrgRel#custodian>
+                                                                                                       ] ,
+                                                                                                       [ rdf:type owl:Restriction ;
+                                                                                                         owl:onProperty <http://purl.org/lis590od/ExampleFall17/OrgRel#clientRole> ;
+                                                                                                         owl:hasValue <http://purl.org/lis590od/ExampleFall17/OrgRel#detainee>
+                                                                                                       ] .
 
 
 ###  http://www.semanticweb.org/davedubin/ontologies/2017/11/untitled-ontology-196#Authority
-:Authority rdf:type owl:Class .
+<http://www.semanticweb.org/davedubin/ontologies/2017/11/untitled-ontology-196#Authority> rdf:type owl:Class .
 
 
 ###  http://www.semanticweb.org/davedubin/ontologies/2017/11/untitled-ontology-196#Person
-:Person rdf:type owl:Class ;
-        owl:equivalentClass <http://xmlns.com/foaf/0.1/Person> .
+<http://www.semanticweb.org/davedubin/ontologies/2017/11/untitled-ontology-196#Person> rdf:type owl:Class ;
+                                                                                       owl:equivalentClass <http://xmlns.com/foaf/0.1/Person> .
 
 
 ###  http://www.semanticweb.org/davedubin/ontologies/2017/11/untitled-ontology-196#place_of_arrest
-:place_of_arrest rdf:type owl:Class ;
-                 rdfs:subClassOf :Arrest .
+<http://www.semanticweb.org/davedubin/ontologies/2017/11/untitled-ontology-196#place_of_arrest> rdf:type owl:Class ;
+                                                                                                rdfs:subClassOf <http://www.semanticweb.org/davedubin/ontologies/2017/11/untitled-ontology-196#Arrest> .
 
 
 ###  http://xmlns.com/foaf/0.1/Organization
@@ -101,12 +101,12 @@ orgRel:OrganizationRelationship rdf:type owl:Class .
 #    Individuals
 #################################################################
 
-###  http://purl.org/lis590od/Fall17/OrgRel#custodian
-orgRel:custodian rdf:type owl:NamedIndividual .
+###  http://purl.org/lis590od/ExampleFall17/OrgRel#custodian
+<http://purl.org/lis590od/ExampleFall17/OrgRel#custodian> rdf:type owl:NamedIndividual .
 
 
-###  http://purl.org/lis590od/Fall17/OrgRel#detainee
-orgRel:detainee rdf:type owl:NamedIndividual .
+###  http://purl.org/lis590od/ExampleFall17/OrgRel#detainee
+<http://purl.org/lis590od/ExampleFall17/OrgRel#detainee> rdf:type owl:NamedIndividual .
 
 
 ###  Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi
